@@ -60,14 +60,15 @@
         "At least one page renders translated content correctly"
       ],
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-001"
       ],
       "labels": [
         "foundation",
         "i18n"
-      ]
+      ],
+      "completionNotes": "Completed by agent"
     },
     {
       "id": "US-004",
@@ -1006,6 +1007,6 @@
     }
   ],
   "metadata": {
-    "updatedAt": "2026-02-02T13:44:12.512Z"
+    "updatedAt": "2026-02-02T13:47:55.236Z"
   }
 }
