@@ -3,10 +3,10 @@
   "sessionId": "4df2899b-7e09-4847-82ce-63123f1e7481",
   "status": "running",
   "startedAt": "2026-02-02T13:36:31.901Z",
-  "updatedAt": "2026-02-02T15:54:00.301Z",
-  "currentIteration": 6,
+  "updatedAt": "2026-02-02T16:00:45.990Z",
+  "currentIteration": 7,
   "maxIterations": 5,
-  "tasksCompleted": 6,
+  "tasksCompleted": 7,
   "isPaused": false,
   "agentPlugin": "claude",
   "trackerState": {
@@ -53,8 +53,8 @@
       {
         "id": "US-007",
         "title": "Implement Google OAuth login",
-        "status": "open",
-        "completedInSession": false
+        "status": "completed",
+        "completedInSession": true
       },
       {
         "id": "US-008",
@@ -346,6 +346,16 @@
       "durationMs": 187857,
       "startedAt": "2026-02-02T15:04:09.949Z",
       "endedAt": "2026-02-02T15:07:17.806Z"
+    },
+    {
+      "iteration": 7,
+      "status": "completed",
+      "taskId": "US-007",
+      "taskTitle": "Implement Google OAuth login",
+      "taskCompleted": true,
+      "durationMs": 209610,
+      "startedAt": "2026-02-02T15:50:30.687Z",
+      "endedAt": "2026-02-02T15:54:00.297Z"
     }
   ],
   "skippedTaskIds": [],

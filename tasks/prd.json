@@ -174,14 +174,15 @@
         "Profile page accessible only when logged in"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-006"
       ],
       "labels": [
         "auth",
         "user-management"
-      ]
+      ],
+      "completionNotes": "Completed by agent"
     },
     {
       "id": "US-009",
@@ -1011,6 +1012,6 @@
     }
   ],
   "metadata": {
-    "updatedAt": "2026-02-02T15:54:00.299Z"
+    "updatedAt": "2026-02-02T16:00:45.987Z"
   }
 }
