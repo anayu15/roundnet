@@ -152,14 +152,15 @@
         "Existing Google users logged in directly"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-006"
       ],
       "labels": [
         "auth",
         "oauth"
-      ]
+      ],
+      "completionNotes": "Completed by agent"
     },
     {
       "id": "US-008",
@@ -1010,6 +1011,6 @@
     }
   ],
   "metadata": {
-    "updatedAt": "2026-02-02T15:07:17.807Z"
+    "updatedAt": "2026-02-02T15:54:00.299Z"
   }
 }
