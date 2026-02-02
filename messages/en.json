@@ -4,6 +4,28 @@
     "spanish": "Spanish",
     "english": "English"
   },
+  "nav": {
+    "home": "Home",
+    "educational": "Educational",
+    "tournaments": "Tournaments",
+    "training": "Training/League",
+    "rankings": "Rankings",
+    "bulkOrders": "Bulk Orders",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
+  },
+  "auth": {
+    "login": "Log in",
+    "logout": "Log out",
+    "profile": "Profile",
+    "account": "Account"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact"
+  },
   "home": {
     "title": "To get started, edit the page.tsx file.",
     "description": "Looking for a starting point or more instructions? Head over to <templates>Templates</templates> or the <learning>Learning</learning> center.",

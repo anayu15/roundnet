@@ -4,6 +4,28 @@
     "spanish": "Español",
     "english": "Inglés"
   },
+  "nav": {
+    "home": "Inicio",
+    "educational": "Educativo",
+    "tournaments": "Torneos",
+    "training": "Formación/Liga",
+    "rankings": "Rankings",
+    "bulkOrders": "Pedidos al por Mayor",
+    "menu": "Menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil",
+    "account": "Cuenta"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contacto"
+  },
   "home": {
     "title": "Para empezar, edita el archivo page.tsx.",
     "description": "¿Buscas un punto de partida o más instrucciones? Dirígete a <templates>Plantillas</templates> o al centro de <learning>Aprendizaje</learning>.",
