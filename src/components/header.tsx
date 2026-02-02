@@ -63,13 +63,21 @@ export function Header() {
               {tAuth("profile")}
             </Link>
           ) : (
-            <Link
-              href={`/${locale}/login`}
-              className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <LogIn className="h-4 w-4" />
-              {tAuth("login")}
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link
+                href={`/${locale}/login`}
+                className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <LogIn className="h-4 w-4" />
+                {tAuth("login")}
+              </Link>
+              <Link
+                href={`/${locale}/register`}
+                className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                {tAuth("register")}
+              </Link>
+            </div>
           )}
         </div>
 
@@ -127,14 +135,23 @@ export function Header() {
                 {tAuth("profile")}
               </Link>
             ) : (
-              <Link
-                href={`/${locale}/login`}
-                className="flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <LogIn className="h-5 w-5" />
-                {tAuth("login")}
-              </Link>
+              <div className="flex flex-col gap-3">
+                <Link
+                  href={`/${locale}/login`}
+                  className="flex items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-accent"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <LogIn className="h-5 w-5" />
+                  {tAuth("login")}
+                </Link>
+                <Link
+                  href={`/${locale}/register`}
+                  className="flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {tAuth("register")}
+                </Link>
+              </div>
             )}
           </div>
         </nav>
