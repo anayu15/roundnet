@@ -155,5 +155,19 @@
   "metadata": {
     "title": "Roundnet España",
     "description": "Federación Española de Roundnet"
+  },
+  "educational": {
+    "title": "Aprende Roundnet",
+    "description": "Descubre todo sobre el Roundnet: reglas, formatos de torneo y vídeos útiles para empezar.",
+    "categories": {
+      "rules": "Reglas",
+      "formats": "Formatos de Torneo",
+      "general_info": "Información General",
+      "videos": "Vídeos"
+    },
+    "noContent": "Aún no hay contenido disponible en esta categoría.",
+    "watchVideo": "Ver Vídeo",
+    "loading": "Cargando contenido...",
+    "error": "Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde."
   }
 }

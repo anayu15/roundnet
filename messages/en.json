@@ -155,5 +155,19 @@
   "metadata": {
     "title": "Roundnet Spain",
     "description": "Spanish Roundnet Federation"
+  },
+  "educational": {
+    "title": "Learn Roundnet",
+    "description": "Discover everything about Roundnet: rules, tournament formats, and helpful videos to get started.",
+    "categories": {
+      "rules": "Rules",
+      "formats": "Tournament Formats",
+      "general_info": "General Information",
+      "videos": "Videos"
+    },
+    "noContent": "No content available in this category yet.",
+    "watchVideo": "Watch Video",
+    "loading": "Loading content...",
+    "error": "Error loading content. Please try again later."
   }
 }
