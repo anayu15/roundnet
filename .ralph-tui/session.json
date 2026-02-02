@@ -3,10 +3,10 @@
   "sessionId": "4df2899b-7e09-4847-82ce-63123f1e7481",
   "status": "running",
   "startedAt": "2026-02-02T13:36:31.901Z",
-  "updatedAt": "2026-02-02T16:21:54.538Z",
-  "currentIteration": 12,
+  "updatedAt": "2026-02-02T16:33:00.360Z",
+  "currentIteration": 13,
   "maxIterations": 5,
-  "tasksCompleted": 12,
+  "tasksCompleted": 13,
   "isPaused": false,
   "agentPlugin": "claude",
   "trackerState": {
@@ -113,8 +113,8 @@
       {
         "id": "US-017",
         "title": "User membership application flow",
-        "status": "open",
-        "completedInSession": false
+        "status": "completed",
+        "completedInSession": true
       },
       {
         "id": "US-018",
@@ -406,6 +406,16 @@
       "durationMs": 93894,
       "startedAt": "2026-02-02T16:13:59.726Z",
       "endedAt": "2026-02-02T16:15:33.620Z"
+    },
+    {
+      "iteration": 13,
+      "status": "completed",
+      "taskId": "US-017",
+      "taskTitle": "User membership application flow",
+      "taskCompleted": true,
+      "durationMs": 371840,
+      "startedAt": "2026-02-02T16:15:42.694Z",
+      "endedAt": "2026-02-02T16:21:54.534Z"
     }
   ],
   "skippedTaskIds": [],
