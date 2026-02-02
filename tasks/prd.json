@@ -371,7 +371,7 @@
         "Email notification to admins on new application (if email configured)"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-016",
         "US-008"
@@ -379,7 +379,8 @@
       "labels": [
         "membership",
         "user-flow"
-      ]
+      ],
+      "completionNotes": "Completed by agent"
     },
     {
       "id": "US-018",
@@ -1016,6 +1017,6 @@
     }
   ],
   "metadata": {
-    "updatedAt": "2026-02-02T16:15:33.621Z"
+    "updatedAt": "2026-02-02T16:21:54.535Z"
   }
 }
