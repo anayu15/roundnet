@@ -177,6 +177,56 @@
     "loading": "Cargando contenido...",
     "error": "Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde."
   },
+  "tournaments": {
+    "title": "Torneos",
+    "description": "Explora los torneos de Roundnet próximos y pasados. ¡Inscribe a tu equipo y compite!",
+    "loading": "Cargando torneos...",
+    "error": "Error al cargar los torneos. Por favor, inténtalo de nuevo más tarde.",
+    "noTournaments": "No se encontraron torneos.",
+    "filters": {
+      "all": "Todos",
+      "upcoming": "Próximos",
+      "completed": "Completados"
+    },
+    "categories": {
+      "all": "Todas las Categorías",
+      "mens": "Masculino",
+      "womens": "Femenino",
+      "mixed": "Mixto"
+    },
+    "status": {
+      "open": "Inscripción Abierta",
+      "closed": "Inscripción Cerrada",
+      "completed": "Completado"
+    },
+    "card": {
+      "teams": "equipos",
+      "teamsRegistered": "{count} / {max} equipos",
+      "teamsNoLimit": "{count} equipos",
+      "registrationDeadline": "Inscríbete antes del",
+      "viewDetails": "Ver Detalles"
+    },
+    "detail": {
+      "backToList": "Volver a Torneos",
+      "description": "Descripción",
+      "information": "Información del Torneo",
+      "date": "Fecha",
+      "location": "Ubicación",
+      "category": "Categoría",
+      "registrationDeadline": "Fecha Límite de Inscripción",
+      "maxTeams": "Equipos Máximos",
+      "registeredTeams": "Equipos Inscritos",
+      "noTeams": "Aún no hay equipos inscritos.",
+      "results": "Resultados",
+      "noResults": "Los resultados aún no están disponibles.",
+      "placement": "Posición",
+      "team": "Equipo",
+      "points": "Puntos",
+      "players": "Jugadores",
+      "notFound": "Torneo no encontrado",
+      "notFoundDescription": "El torneo que buscas no existe o ha sido eliminado."
+    }
+  },
   "membership": {
     "title": "Membresía AMR",
     "description": "Hazte socio de la Asociación Madrileña de Roundnet y accede a beneficios exclusivos.",

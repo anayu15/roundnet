@@ -177,6 +177,56 @@
     "loading": "Loading content...",
     "error": "Error loading content. Please try again later."
   },
+  "tournaments": {
+    "title": "Tournaments",
+    "description": "Browse upcoming and past Roundnet tournaments. Register your team and compete!",
+    "loading": "Loading tournaments...",
+    "error": "Error loading tournaments. Please try again later.",
+    "noTournaments": "No tournaments found.",
+    "filters": {
+      "all": "All",
+      "upcoming": "Upcoming",
+      "completed": "Completed"
+    },
+    "categories": {
+      "all": "All Categories",
+      "mens": "Men's",
+      "womens": "Women's",
+      "mixed": "Mixed"
+    },
+    "status": {
+      "open": "Registration Open",
+      "closed": "Registration Closed",
+      "completed": "Completed"
+    },
+    "card": {
+      "teams": "teams",
+      "teamsRegistered": "{count} / {max} teams",
+      "teamsNoLimit": "{count} teams",
+      "registrationDeadline": "Register by",
+      "viewDetails": "View Details"
+    },
+    "detail": {
+      "backToList": "Back to Tournaments",
+      "description": "Description",
+      "information": "Tournament Information",
+      "date": "Date",
+      "location": "Location",
+      "category": "Category",
+      "registrationDeadline": "Registration Deadline",
+      "maxTeams": "Maximum Teams",
+      "registeredTeams": "Registered Teams",
+      "noTeams": "No teams registered yet.",
+      "results": "Results",
+      "noResults": "Results not yet available.",
+      "placement": "Place",
+      "team": "Team",
+      "points": "Points",
+      "players": "Players",
+      "notFound": "Tournament not found",
+      "notFoundDescription": "The tournament you're looking for doesn't exist or has been removed."
+    }
+  },
   "membership": {
     "title": "AMR Membership",
     "description": "Become a member of the Madrid Roundnet Association and access exclusive benefits.",
