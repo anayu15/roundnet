@@ -3,10 +3,10 @@
   "sessionId": "4df2899b-7e09-4847-82ce-63123f1e7481",
   "status": "running",
   "startedAt": "2026-02-02T13:36:31.901Z",
-  "updatedAt": "2026-02-02T16:00:45.990Z",
-  "currentIteration": 7,
+  "updatedAt": "2026-02-02T16:06:15.633Z",
+  "currentIteration": 8,
   "maxIterations": 5,
-  "tasksCompleted": 7,
+  "tasksCompleted": 8,
   "isPaused": false,
   "agentPlugin": "claude",
   "trackerState": {
@@ -59,8 +59,8 @@
       {
         "id": "US-008",
         "title": "Create user profile page",
-        "status": "open",
-        "completedInSession": false
+        "status": "completed",
+        "completedInSession": true
       },
       {
         "id": "US-009",
@@ -356,6 +356,16 @@
       "durationMs": 209610,
       "startedAt": "2026-02-02T15:50:30.687Z",
       "endedAt": "2026-02-02T15:54:00.297Z"
+    },
+    {
+      "iteration": 8,
+      "status": "completed",
+      "taskId": "US-008",
+      "taskTitle": "Create user profile page",
+      "taskCompleted": true,
+      "durationMs": 276067,
+      "startedAt": "2026-02-02T15:56:09.919Z",
+      "endedAt": "2026-02-02T16:00:45.986Z"
     }
   ],
   "skippedTaskIds": [],
