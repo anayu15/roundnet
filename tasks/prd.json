@@ -442,7 +442,7 @@
         "Results visible for completed tournaments"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "dependsOn": [
         "US-019",
         "US-004"
@@ -451,7 +451,8 @@
         "public",
         "tournaments",
         "ui"
-      ]
+      ],
+      "completionNotes": "Completed by agent"
     },
     {
       "id": "US-021",
@@ -1018,6 +1019,6 @@
     }
   ],
   "metadata": {
-    "updatedAt": "2026-02-02T16:33:00.358Z"
+    "updatedAt": "2026-02-02T16:47:41.118Z"
   }
 }
