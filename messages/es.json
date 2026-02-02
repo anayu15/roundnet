@@ -44,6 +44,26 @@
       "genericError": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
     }
   },
+  "completeProfile": {
+    "title": "Completa tu Perfil",
+    "subtitle": "Elige un nombre de usuario único para continuar",
+    "signedInAs": "Conectado como",
+    "username": "Nombre de Usuario",
+    "usernamePlaceholder": "Elige un nombre de usuario único",
+    "usernameDescription": "Este será tu identificador único en la plataforma",
+    "submit": "Continuar",
+    "submitting": "Guardando...",
+    "errors": {
+      "usernameRequired": "El nombre de usuario es obligatorio",
+      "usernameMinLength": "El nombre de usuario debe tener al menos 2 caracteres",
+      "usernameMaxLength": "El nombre de usuario debe tener menos de 100 caracteres",
+      "usernameTaken": "Este nombre de usuario ya está en uso",
+      "usernameChecking": "Comprobando disponibilidad...",
+      "usernameAvailable": "Este nombre de usuario está disponible",
+      "notAuthenticated": "Debes iniciar sesión para completar tu perfil",
+      "genericError": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
+    }
+  },
   "registration": {
     "title": "Crea tu cuenta",
     "subtitle": "Únete a Roundnet España",

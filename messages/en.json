@@ -44,6 +44,26 @@
       "genericError": "An error occurred. Please try again."
     }
   },
+  "completeProfile": {
+    "title": "Complete Your Profile",
+    "subtitle": "Choose a unique username to continue",
+    "signedInAs": "Signed in as",
+    "username": "Username",
+    "usernamePlaceholder": "Choose a unique username",
+    "usernameDescription": "This will be your unique identifier on the platform",
+    "submit": "Continue",
+    "submitting": "Saving...",
+    "errors": {
+      "usernameRequired": "Username is required",
+      "usernameMinLength": "Username must be at least 2 characters",
+      "usernameMaxLength": "Username must be less than 100 characters",
+      "usernameTaken": "This username is already taken",
+      "usernameChecking": "Checking availability...",
+      "usernameAvailable": "This username is available",
+      "notAuthenticated": "You must be signed in to complete your profile",
+      "genericError": "An error occurred. Please try again."
+    }
+  },
   "registration": {
     "title": "Create your account",
     "subtitle": "Join Roundnet Spain",
