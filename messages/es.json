@@ -24,6 +24,26 @@
     "alreadyHaveAccount": "¿Ya tienes una cuenta?",
     "noAccount": "¿No tienes una cuenta?"
   },
+  "login": {
+    "title": "Bienvenido de nuevo",
+    "subtitle": "Inicia sesión en tu cuenta",
+    "identifier": "Usuario o Email",
+    "identifierPlaceholder": "Introduce tu usuario o email",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Introduce tu contraseña",
+    "submit": "Iniciar Sesión",
+    "submitting": "Iniciando sesión...",
+    "orContinueWith": "O continúa con",
+    "google": "Continuar con Google",
+    "success": "¡Sesión iniciada con éxito!",
+    "errors": {
+      "identifierRequired": "El usuario o email es obligatorio",
+      "passwordRequired": "La contraseña es obligatoria",
+      "invalidCredentials": "Usuario/email o contraseña incorrectos",
+      "userNotFound": "No se encontró ninguna cuenta con este usuario o email",
+      "genericError": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
+    }
+  },
   "registration": {
     "title": "Crea tu cuenta",
     "subtitle": "Únete a Roundnet España",

@@ -24,6 +24,26 @@
     "alreadyHaveAccount": "Already have an account?",
     "noAccount": "Don't have an account?"
   },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to your account",
+    "identifier": "Username or Email",
+    "identifierPlaceholder": "Enter your username or email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Sign In",
+    "submitting": "Signing in...",
+    "orContinueWith": "Or continue with",
+    "google": "Continue with Google",
+    "success": "Signed in successfully!",
+    "errors": {
+      "identifierRequired": "Username or email is required",
+      "passwordRequired": "Password is required",
+      "invalidCredentials": "Invalid username/email or password",
+      "userNotFound": "No account found with this username or email",
+      "genericError": "An error occurred. Please try again."
+    }
+  },
   "registration": {
     "title": "Create your account",
     "subtitle": "Join Roundnet Spain",
