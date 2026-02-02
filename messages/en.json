@@ -1,0 +1,19 @@
+{
+  "common": {
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "home": {
+    "title": "To get started, edit the page.tsx file.",
+    "description": "Looking for a starting point or more instructions? Head over to <templates>Templates</templates> or the <learning>Learning</learning> center.",
+    "templates": "Templates",
+    "learning": "Learning",
+    "deployNow": "Deploy Now",
+    "documentation": "Documentation"
+  },
+  "metadata": {
+    "title": "Roundnet Spain",
+    "description": "Spanish Roundnet Federation"
+  }
+}

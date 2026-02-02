@@ -1,0 +1,19 @@
+{
+  "common": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "home": {
+    "title": "Para empezar, edita el archivo page.tsx.",
+    "description": "¿Buscas un punto de partida o más instrucciones? Dirígete a <templates>Plantillas</templates> o al centro de <learning>Aprendizaje</learning>.",
+    "templates": "Plantillas",
+    "learning": "Aprendizaje",
+    "deployNow": "Desplegar Ahora",
+    "documentation": "Documentación"
+  },
+  "metadata": {
+    "title": "Roundnet España",
+    "description": "Federación Española de Roundnet"
+  }
+}
