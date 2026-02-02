@@ -1,0 +1,1009 @@
+{
+  "name": "Asociación Madrid Roundnet (AMR) Platform",
+  "branchName": "feature/amr-platform",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Initialize Next.js project with TypeScript and pnpm",
+      "description": "As a developer, I want a properly configured Next.js 14+ project so that I have a solid foundation for development.",
+      "acceptanceCriteria": [
+        "Next.js 14+ project created with App Router",
+        "TypeScript configured with strict mode",
+        "pnpm as package manager with lockfile",
+        "ESLint configured with Next.js recommended rules",
+        "Tailwind CSS installed and configured",
+        "shadcn/ui initialized with default theme",
+        "Project structure follows Next.js App Router conventions",
+        "pnpm typecheck and pnpm lint scripts work"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [],
+      "labels": [
+        "foundation",
+        "setup"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Configure Supabase project and local development",
+      "description": "As a developer, I want Supabase configured so that I can develop with a real database locally.",
+      "acceptanceCriteria": [
+        "Supabase project created (or local dev setup with Supabase CLI)",
+        "Environment variables configured (.env.local with Supabase URL and anon key)",
+        "Supabase client initialized in the codebase",
+        "Database connection verified with a simple query",
+        ".env.example file created with placeholder values"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [
+        "US-001"
+      ],
+      "labels": [
+        "foundation",
+        "database"
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Set up internationalization (EN/ES)",
+      "description": "As a user, I want to browse the site in English or Spanish so that I can use my preferred language.",
+      "acceptanceCriteria": [
+        "next-intl installed and configured",
+        "URL-based locale routing (/es/*, /en/*)",
+        "Default locale set to Spanish (es)",
+        "Language switcher component created",
+        "Translation files structure created (messages/es.json, messages/en.json)",
+        "At least one page renders translated content correctly"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [
+        "US-001"
+      ],
+      "labels": [
+        "foundation",
+        "i18n"
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "Create base layout with navigation",
+      "description": "As a user, I want a consistent navigation structure so that I can easily access all sections of the platform.",
+      "acceptanceCriteria": [
+        "Root layout with header and footer",
+        "Navigation menu with links to: Educational, Tournaments, Training/League, Rankings, Bulk Orders",
+        "Mobile-responsive hamburger menu",
+        "Language switcher in header",
+        "Auth status indicator (login/logout/profile)",
+        "Navigation labels are translated (EN/ES)"
+      ],
+      "priority": 1,
+      "passes": false,
+      "dependsOn": [
+        "US-003"
+      ],
+      "labels": [
+        "foundation",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-005",
+      "title": "Implement user registration with unique username",
+      "description": "As a visitor, I want to create an account with my full name as a unique username so that I can participate in the platform.",
+      "acceptanceCriteria": [
+        "Registration form with fields: Full Name (required, unique), Email (optional), Password",
+        "Full name uniqueness validated in real-time",
+        "If email provided, email verification sent",
+        "User created in Supabase Auth with username stored in user metadata",
+        "Error handling for duplicate username",
+        "Form validation with appropriate error messages (translated)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002",
+        "US-004"
+      ],
+      "labels": [
+        "auth",
+        "user-management"
+      ]
+    },
+    {
+      "id": "US-006",
+      "title": "Implement flexible login (username or email)",
+      "description": "As a user, I want to log in with either my username or email so that I have flexibility in how I access my account.",
+      "acceptanceCriteria": [
+        "Single input field that accepts username OR email",
+        "System detects if input is email format or username",
+        "For username: lookup user by username metadata, then authenticate",
+        "For email: standard Supabase email auth",
+        "Password field on same form",
+        "Google OAuth button available",
+        "Error messages for invalid credentials (translated)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-005"
+      ],
+      "labels": [
+        "auth"
+      ]
+    },
+    {
+      "id": "US-007",
+      "title": "Implement Google OAuth login",
+      "description": "As a user, I want to log in with my Google account so that I can access the platform quickly.",
+      "acceptanceCriteria": [
+        "Google OAuth configured in Supabase",
+        "Sign in with Google button on login page",
+        "First-time Google users prompted to set their unique username",
+        "Username uniqueness enforced for Google users",
+        "Existing Google users logged in directly"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-006"
+      ],
+      "labels": [
+        "auth",
+        "oauth"
+      ]
+    },
+    {
+      "id": "US-008",
+      "title": "Create user profile page",
+      "description": "As a user, I want to view and edit my profile so that I can manage my account information.",
+      "acceptanceCriteria": [
+        "Profile page shows: username, email (if set), membership status, registration date",
+        "Users can update their email (with verification)",
+        "Users can change their password",
+        "Users cannot change their username (admin only)",
+        "Profile page accessible only when logged in"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-006"
+      ],
+      "labels": [
+        "auth",
+        "user-management"
+      ]
+    },
+    {
+      "id": "US-009",
+      "title": "Create admin user management dashboard",
+      "description": "As an admin, I want to manage all users so that I can maintain the platform.",
+      "acceptanceCriteria": [
+        "Admin-only page listing all users",
+        "Search/filter users by name, email, membership status",
+        "View user details (profile, membership status, linked shadow profiles)",
+        "Edit user profile (including username)",
+        "Grant/revoke membership status",
+        "Link/unlink shadow profiles to user accounts",
+        "Pagination for user list"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "user-management"
+      ]
+    },
+    {
+      "id": "US-010",
+      "title": "Create shadow player database schema",
+      "description": "As an admin, I want shadow players stored in the database so that non-registered players can be tracked in tournaments and rankings.",
+      "acceptanceCriteria": [
+        "shadow_players table created with: id, name, created_at, linked_user_id (nullable FK)",
+        "Unique constraint on name (case-insensitive)",
+        "Index on linked_user_id for efficient lookups",
+        "RLS policies: public read, admin write"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "database",
+        "shadow-players"
+      ]
+    },
+    {
+      "id": "US-011",
+      "title": "Admin CRUD for shadow players",
+      "description": "As an admin, I want to create, edit, and delete shadow players so that I can manage players who haven't registered.",
+      "acceptanceCriteria": [
+        "Admin page to list all shadow players",
+        "Create new shadow player form",
+        "Edit shadow player name",
+        "Delete shadow player (with warning if they have tournament history)",
+        "View which user account (if any) is linked"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-010",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "shadow-players"
+      ]
+    },
+    {
+      "id": "US-012",
+      "title": "User claims shadow profile during registration",
+      "description": "As a new user, I want to claim my existing shadow profile so that my historical data is preserved.",
+      "acceptanceCriteria": [
+        "During registration, system checks if username matches any unlinked shadow player",
+        "If match found, user shown option to claim the profile",
+        "Claim request sent to admin for approval",
+        "Admin can approve/reject claim from dashboard",
+        "On approval, shadow player linked to user account",
+        "User's historical results now appear on their profile"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-005",
+        "US-010"
+      ],
+      "labels": [
+        "auth",
+        "shadow-players"
+      ]
+    },
+    {
+      "id": "US-013",
+      "title": "Create educational content database schema",
+      "description": "As an admin, I want educational content stored in the database so that I can manage it dynamically.",
+      "acceptanceCriteria": [
+        "educational_content table: id, title_es, title_en, content_es, content_en, category, video_url (nullable), sort_order, created_at",
+        "Categories: rules, formats, general_info, videos",
+        "RLS: public read, admin write"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "database",
+        "educational"
+      ]
+    },
+    {
+      "id": "US-014",
+      "title": "Build educational section public pages",
+      "description": "As a visitor, I want to browse educational content so that I can learn about Roundnet.",
+      "acceptanceCriteria": [
+        "/[locale]/educational page with category tabs/sections",
+        "Content displayed in user's selected language",
+        "Embedded video player for video content",
+        "Responsive layout for mobile/desktop",
+        "SEO metadata for each page"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-013",
+        "US-004"
+      ],
+      "labels": [
+        "public",
+        "educational",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-015",
+      "title": "Admin CRUD for educational content",
+      "description": "As an admin, I want to manage educational content so that I can keep information up to date.",
+      "acceptanceCriteria": [
+        "Admin page listing all educational content",
+        "Create/edit form with fields for both languages",
+        "Rich text editor for content",
+        "Video URL field with embed preview",
+        "Drag-and-drop reordering (sort_order)",
+        "Delete content with confirmation"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-013",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "educational"
+      ]
+    },
+    {
+      "id": "US-016",
+      "title": "Create membership database schema",
+      "description": "As an admin, I want membership data tracked so that I can manage AMR members.",
+      "acceptanceCriteria": [
+        "memberships table: id, user_id (FK), status (pending/active/expired), applied_at, approved_at, expires_at, payment_reference",
+        "membership_payments table: id, membership_id (FK), amount, payment_method (bizum/transfer), status (pending/verified), verified_at, verified_by",
+        "RLS: users see own membership, admins see all"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "database",
+        "membership"
+      ]
+    },
+    {
+      "id": "US-017",
+      "title": "User membership application flow",
+      "description": "As a registered user, I want to apply for AMR membership so that I can access member-only features.",
+      "acceptanceCriteria": [
+        "Membership application page showing payment info (Bizum number, bank transfer details)",
+        "User submits application with payment reference",
+        "Application status visible on user profile (pending/active/expired)",
+        "Email notification to admins on new application (if email configured)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-016",
+        "US-008"
+      ],
+      "labels": [
+        "membership",
+        "user-flow"
+      ]
+    },
+    {
+      "id": "US-018",
+      "title": "Admin membership management",
+      "description": "As an admin, I want to verify membership payments so that I can grant access to members.",
+      "acceptanceCriteria": [
+        "Admin page listing all membership applications",
+        "Filter by status (pending/active/expired)",
+        "Mark payment as verified (records who verified and when)",
+        "Set membership expiration date",
+        "Revoke membership manually",
+        "View payment history for each member"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-016",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "membership"
+      ]
+    },
+    {
+      "id": "US-019",
+      "title": "Create tournament database schema",
+      "description": "As an admin, I want tournaments stored with full relational data so that I can manage complex tournament structures.",
+      "acceptanceCriteria": [
+        "tournaments table: id, name_es, name_en, description_es, description_en, date, location, registration_deadline, max_teams, category (mens/womens/mixed), status (draft/open/closed/completed), points_config (JSONB)",
+        "tournament_teams table: id, tournament_id, team_name, created_by_user_id, registration_date, payment_status, payment_reference",
+        "tournament_team_members table: id, team_id, user_id (nullable), shadow_player_id (nullable), role (player1/player2)",
+        "tournament_results table: id, tournament_id, team_id, placement, points_awarded",
+        "Check constraint: either user_id or shadow_player_id must be set, not both",
+        "RLS: public read for non-draft tournaments, admin write"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002",
+        "US-010"
+      ],
+      "labels": [
+        "database",
+        "tournaments"
+      ]
+    },
+    {
+      "id": "US-020",
+      "title": "Public tournament listing and details",
+      "description": "As a visitor, I want to browse tournaments so that I can see upcoming and past events.",
+      "acceptanceCriteria": [
+        "/[locale]/tournaments page listing all non-draft tournaments",
+        "Filter by status (upcoming/completed) and category",
+        "Tournament card shows: name, date, location, registration status, team count",
+        "Tournament detail page with full description",
+        "Registered teams list visible (with player names)",
+        "Results visible for completed tournaments"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-019",
+        "US-004"
+      ],
+      "labels": [
+        "public",
+        "tournaments",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-021",
+      "title": "Tournament registration flow",
+      "description": "As a logged-in user, I want to register a team for a tournament so that I can participate.",
+      "acceptanceCriteria": [
+        "Registration button visible only for open tournaments",
+        "User must be logged in to register",
+        "Team registration form: team name, partner selection",
+        "Partner options: search existing users, search shadow players, create new shadow player",
+        "Creating new shadow player inline during registration",
+        "Payment info displayed after registration",
+        "Registration confirmation with payment reference field",
+        "User can view/edit their registration until deadline"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-020",
+        "US-006"
+      ],
+      "labels": [
+        "tournaments",
+        "user-flow"
+      ]
+    },
+    {
+      "id": "US-022",
+      "title": "Admin tournament CRUD",
+      "description": "As an admin, I want to create and manage tournaments so that I can organize events.",
+      "acceptanceCriteria": [
+        "Admin page listing all tournaments (including drafts)",
+        "Create tournament form with all fields (both languages)",
+        "Points configuration: define placement-to-points mapping (e.g., 1st=100, 2nd=80)",
+        "Edit tournament details",
+        "Change tournament status (draft→open→closed→completed)",
+        "Delete tournament (with confirmation, warn if has registrations)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-019",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "tournaments"
+      ]
+    },
+    {
+      "id": "US-023",
+      "title": "Admin tournament participant management",
+      "description": "As an admin, I want to manage tournament registrations so that I can track participants and payments.",
+      "acceptanceCriteria": [
+        "View all registered teams for a tournament",
+        "Mark payment as verified for each team",
+        "Remove team from tournament",
+        "Add team manually (for late registrations)",
+        "Export participant list (CSV)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-022"
+      ],
+      "labels": [
+        "admin",
+        "tournaments"
+      ]
+    },
+    {
+      "id": "US-024",
+      "title": "Admin tournament results entry",
+      "description": "As an admin, I want to enter tournament results so that rankings are updated.",
+      "acceptanceCriteria": [
+        "Results entry page for completed tournaments",
+        "Assign placement to each team (1st, 2nd, 3rd, etc.)",
+        "Points auto-calculated based on tournament's points config",
+        "Bulk save results",
+        "Results entry triggers ranking recalculation",
+        "Lock results after entry (require unlock to edit)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-023",
+        "US-035"
+      ],
+      "labels": [
+        "admin",
+        "tournaments",
+        "rankings"
+      ]
+    },
+    {
+      "id": "US-025",
+      "title": "Create training and liguilla database schema",
+      "description": "As an admin, I want training and league data stored so that I can manage member activities.",
+      "acceptanceCriteria": [
+        "training_sessions table: id, date, day_of_week (monday/wednesday), notes_es, notes_en, status (scheduled/completed/cancelled)",
+        "training_attendance table: id, session_id, user_id, attended (boolean)",
+        "liguilla_rounds table: id, training_session_id (FK to Monday sessions), points_config (JSONB)",
+        "liguilla_groups table: id, round_id, group_number, is_auto_generated (boolean)",
+        "liguilla_group_members table: id, group_id, user_id, shadow_player_id (nullable)",
+        "liguilla_results table: id, group_id, player_user_id, player_shadow_id, wins, losses, points_awarded",
+        "RLS: members can read, admins write"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002",
+        "US-016"
+      ],
+      "labels": [
+        "database",
+        "training",
+        "liguilla"
+      ]
+    },
+    {
+      "id": "US-026",
+      "title": "Member-only training section access",
+      "description": "As a member, I want to access the training section so that I can view schedules and participate in the Liguilla.",
+      "acceptanceCriteria": [
+        "/[locale]/training route protected - requires authenticated member",
+        "Non-members see 'Members Only' message with link to apply",
+        "Members see training schedule and Liguilla information"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-025",
+        "US-017",
+        "US-004"
+      ],
+      "labels": [
+        "training",
+        "membership",
+        "access-control"
+      ]
+    },
+    {
+      "id": "US-027",
+      "title": "Training schedule display",
+      "description": "As a member, I want to see the training schedule so that I know when to attend.",
+      "acceptanceCriteria": [
+        "Calendar or list view of upcoming training sessions",
+        "Sessions show: date, day (Mon/Wed), status, notes",
+        "Past sessions show attendance records",
+        "Member can mark intention to attend (optional feature)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-026"
+      ],
+      "labels": [
+        "training",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-028",
+      "title": "Liguilla auto-seeding algorithm",
+      "description": "As an admin, I want automatic group generation based on recent performance so that competitive balance is maintained.",
+      "acceptanceCriteria": [
+        "Algorithm inputs: list of participating players, their recent Liguilla performance",
+        "Performance metric: win rate in last N Liguilla sessions (configurable, default 4)",
+        "Groups of 4 players generated",
+        "Top performers distributed across groups (serpentine/snake draft style)",
+        "Handle odd numbers (groups of 3 if needed)",
+        "Algorithm is deterministic (same inputs = same outputs)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-025"
+      ],
+      "labels": [
+        "liguilla",
+        "algorithm"
+      ]
+    },
+    {
+      "id": "US-029",
+      "title": "Admin Liguilla management",
+      "description": "As an admin, I want to manage Monday Liguilla sessions so that the league runs smoothly.",
+      "acceptanceCriteria": [
+        "Create Liguilla round for a Monday training session",
+        "Select participating players (from members and shadow players)",
+        "Run auto-seeding to generate groups",
+        "View generated groups",
+        "Manually edit groups (move players between groups)",
+        "Set points configuration for this round",
+        "Delete/recreate groups if needed"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-028",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "liguilla"
+      ]
+    },
+    {
+      "id": "US-030",
+      "title": "Admin Liguilla results entry",
+      "description": "As an admin, I want to enter Liguilla results so that league rankings update.",
+      "acceptanceCriteria": [
+        "Results entry UI per group",
+        "Enter wins/losses for each player in group",
+        "Points auto-calculated per config",
+        "Save results and trigger ranking update",
+        "View historical Liguilla results"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-029",
+        "US-035"
+      ],
+      "labels": [
+        "admin",
+        "liguilla",
+        "rankings"
+      ]
+    },
+    {
+      "id": "US-031",
+      "title": "Admin training session management",
+      "description": "As an admin, I want to manage training sessions so that I can maintain the schedule.",
+      "acceptanceCriteria": [
+        "Create/edit/delete training sessions",
+        "Bulk create sessions (e.g., all Mondays and Wednesdays for next month)",
+        "Mark session as cancelled with optional note",
+        "Record attendance after session"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-025",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "training"
+      ]
+    },
+    {
+      "id": "US-032",
+      "title": "Create ranking database schema",
+      "description": "As an admin, I want rankings stored with historical data so that annual cycles and history are preserved.",
+      "acceptanceCriteria": [
+        "ranking_entries table: id, year, category (mens_individual/womens_individual/mens_team/womens_team/mixed_team), entity_type (player/team), user_id (nullable), shadow_player_id (nullable), team_id (nullable), total_points, rank_position",
+        "ranking_events table: id, ranking_entry_id, event_type (tournament/liguilla), event_id, points_earned, event_date",
+        "Composite unique constraint on (year, category, entity_id)",
+        "Indexes for efficient ranking queries",
+        "RLS: public read"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "database",
+        "rankings"
+      ]
+    },
+    {
+      "id": "US-033",
+      "title": "Public ranking display",
+      "description": "As a visitor, I want to view global rankings so that I can see top players and teams.",
+      "acceptanceCriteria": [
+        "/[locale]/rankings page with category tabs",
+        "Categories: Men's Individual, Women's Individual, Men's Teams, Women's Teams, Mixed Teams",
+        "Default to current year",
+        "Year filter dropdown to view historical rankings",
+        "Ranking table shows: position, name, total points",
+        "Click player/team to view profile"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-032",
+        "US-004"
+      ],
+      "labels": [
+        "public",
+        "rankings",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-034",
+      "title": "Player ranking profile",
+      "description": "As a visitor, I want to view a player's ranking profile so that I can see their history.",
+      "acceptanceCriteria": [
+        "Player profile page showing: name, current rank per category, total points",
+        "Match/event history table: event name, date, placement, points earned",
+        "Filter history by year",
+        "Charts showing ranking progression over time (optional enhancement)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-033"
+      ],
+      "labels": [
+        "public",
+        "rankings",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-035",
+      "title": "Ranking calculation engine",
+      "description": "As a developer, I want ranking calculations automated so that rankings stay accurate.",
+      "acceptanceCriteria": [
+        "Function to recalculate rankings for a given year and category",
+        "Triggered after tournament results entry",
+        "Triggered after Liguilla results entry",
+        "Handles ties appropriately (same points = same rank)",
+        "Updates rank_position for all affected entries",
+        "Efficient: only recalculates affected category/year"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-032"
+      ],
+      "labels": [
+        "rankings",
+        "backend"
+      ]
+    },
+    {
+      "id": "US-036",
+      "title": "Annual ranking reset",
+      "description": "As an admin, I want to reset rankings annually so that each year starts fresh.",
+      "acceptanceCriteria": [
+        "Admin action to finalize current year rankings",
+        "Previous year data preserved and queryable",
+        "New year starts with zero points for all",
+        "Historical rankings remain accessible via year filter",
+        "Confirmation dialog with warning"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-035",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "rankings"
+      ]
+    },
+    {
+      "id": "US-037",
+      "title": "Create bulk order database schema",
+      "description": "As an admin, I want bulk orders tracked so that I can coordinate group purchases.",
+      "acceptanceCriteria": [
+        "bulk_order_windows table: id, title_es, title_en, description, status (open/closed/ordered/delivered), opens_at, closes_at, created_at",
+        "bulk_order_items table: id, window_id, user_id, product_name, product_url, quantity, unit_price, payment_status, payment_reference",
+        "bulk_order_history table: id, window_id, total_amount, shipping_cost, order_date, delivery_date, notes",
+        "RLS: users see own items, admins see all"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002"
+      ],
+      "labels": [
+        "database",
+        "bulk-orders"
+      ]
+    },
+    {
+      "id": "US-038",
+      "title": "Public bulk order window display",
+      "description": "As a visitor, I want to see current and past bulk orders so that I can participate.",
+      "acceptanceCriteria": [
+        "/[locale]/bulk-orders page",
+        "Current open window prominently displayed (if any)",
+        "Link to Premier Spike website",
+        "Instructions on how to participate",
+        "History of past orders (dates, status)"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-037",
+        "US-004"
+      ],
+      "labels": [
+        "public",
+        "bulk-orders",
+        "ui"
+      ]
+    },
+    {
+      "id": "US-039",
+      "title": "User bulk order item submission",
+      "description": "As a logged-in user, I want to submit items for a bulk order so that I can share shipping costs.",
+      "acceptanceCriteria": [
+        "Form to add item: product URL, product name, quantity, unit price",
+        "Only available during open order window",
+        "User can view their submitted items",
+        "User can edit/remove items until window closes",
+        "Payment info displayed with reference field"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-038",
+        "US-006"
+      ],
+      "labels": [
+        "bulk-orders",
+        "user-flow"
+      ]
+    },
+    {
+      "id": "US-040",
+      "title": "Admin bulk order management",
+      "description": "As an admin, I want to manage bulk orders so that I can coordinate purchases.",
+      "acceptanceCriteria": [
+        "Create/edit/delete order windows",
+        "View all items in current window grouped by user",
+        "Mark individual item payments as verified",
+        "Close window (no more submissions)",
+        "Mark order as placed (record order date)",
+        "Mark order as delivered (record delivery date)",
+        "View consolidated item list for placing order",
+        "Export order list (CSV)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-037",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "bulk-orders"
+      ]
+    },
+    {
+      "id": "US-041",
+      "title": "Bulk order history",
+      "description": "As a user, I want to see my past bulk order participation so that I can track my orders.",
+      "acceptanceCriteria": [
+        "User profile section showing past bulk order items",
+        "Status of each item (pending/paid/ordered/delivered)",
+        "Filterable by order window"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-039",
+        "US-008"
+      ],
+      "labels": [
+        "bulk-orders",
+        "user-flow"
+      ]
+    },
+    {
+      "id": "US-042",
+      "title": "Create admin dashboard home",
+      "description": "As an admin, I want a central dashboard so that I can quickly access admin functions.",
+      "acceptanceCriteria": [
+        "/[locale]/admin route protected - requires admin role",
+        "Dashboard shows quick stats: total users, active members, open tournaments, pending payments",
+        "Quick links to: Users, Tournaments, Training, Rankings, Bulk Orders, Content",
+        "Recent activity feed (new registrations, payment verifications)"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "US-043",
+      "title": "Implement admin role system",
+      "description": "As an admin, I want role-based access so that only authorized users can access admin functions.",
+      "acceptanceCriteria": [
+        "user_roles table or role field in user metadata",
+        "Roles: user, member, admin",
+        "Admin middleware for protected routes",
+        "RLS policies enforce admin-only write access",
+        "Super admin can grant/revoke admin role"
+      ],
+      "priority": 2,
+      "passes": false,
+      "dependsOn": [
+        "US-002",
+        "US-005"
+      ],
+      "labels": [
+        "auth",
+        "admin",
+        "access-control"
+      ]
+    },
+    {
+      "id": "US-044",
+      "title": "Global payment tracking dashboard",
+      "description": "As an admin, I want a unified view of all pending payments so that I can track finances.",
+      "acceptanceCriteria": [
+        "Dashboard page showing all pending payments across modules",
+        "Filter by type: membership, tournament, bulk order",
+        "Filter by date range",
+        "Quick action to verify payment from this view",
+        "Summary totals: pending amount, verified this month"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-042",
+        "US-016",
+        "US-019",
+        "US-037"
+      ],
+      "labels": [
+        "admin",
+        "payments"
+      ]
+    },
+    {
+      "id": "US-045",
+      "title": "Create data migration tools",
+      "description": "As an admin, I want to import existing spreadsheet data so that historical records are preserved.",
+      "acceptanceCriteria": [
+        "CSV import tool for players (creates shadow players or users)",
+        "CSV import tool for historical tournament results",
+        "CSV import tool for historical ranking data by year",
+        "Validation and error reporting during import",
+        "Dry-run mode to preview import without committing",
+        "Admin-only access to migration tools"
+      ],
+      "priority": 3,
+      "passes": false,
+      "dependsOn": [
+        "US-010",
+        "US-019",
+        "US-032",
+        "US-043"
+      ],
+      "labels": [
+        "admin",
+        "migration",
+        "data"
+      ]
+    }
+  ],
+  "metadata": {
+    "updatedAt": "2026-02-02T16:47:41.118Z"
+  }
+}

@@ -1,14 +1,14 @@
 {
-  "id": "4df2899b-7e09-4847-82ce-63123f1e7481",
+  "id": "846798bf-2410-4c37-a52e-02f2e61bb671",
   "status": "running",
-  "startedAt": "2026-02-02T13:36:30.715Z",
-  "updatedAt": "2026-02-02T16:42:11.858Z",
+  "startedAt": "2026-02-02T17:10:47.793Z",
+  "updatedAt": "2026-02-02T17:10:47.793Z",
   "agentPlugin": "claude",
   "trackerPlugin": "json",
-  "prdPath": "./tasks/prd.json",
-  "currentIteration": 14,
-  "maxIterations": 15,
+  "prdPath": "./prd.json",
+  "currentIteration": 0,
+  "maxIterations": 5,
   "totalTasks": 0,
-  "tasksCompleted": 14,
+  "tasksCompleted": 0,
   "cwd": "/Users/anayusta/workspace/roundnet"
 }
