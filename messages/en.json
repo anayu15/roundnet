@@ -120,6 +120,13 @@
     "noEmail": "No email set",
     "membershipStatus": "Membership Status",
     "memberStatusActive": "Active Member",
+    "memberStatusPending": "Pending Verification",
+    "memberStatusExpired": "Membership Expired",
+    "memberStatusNone": "No Membership",
+    "viewMembership": "View membership",
+    "applyMembership": "Apply for membership",
+    "expiresOn": "Expires on",
+    "pendingVerification": "Your application is being reviewed",
     "registrationDate": "Member Since",
     "updateEmail": "Update Email",
     "updateEmailDescription": "Change your email address. A verification email will be sent to your new address.",
@@ -169,5 +176,65 @@
     "watchVideo": "Watch Video",
     "loading": "Loading content...",
     "error": "Error loading content. Please try again later."
+  },
+  "membership": {
+    "title": "AMR Membership",
+    "description": "Become a member of the Madrid Roundnet Association and access exclusive benefits.",
+    "currentMembership": "Your Membership",
+    "currentMembershipDescription": "Information about your current membership.",
+    "statusLabel": "Status",
+    "paymentReference": "Payment Reference",
+    "appliedAt": "Application Date",
+    "approvedAt": "Approval Date",
+    "expiresAt": "Expiration Date",
+    "pendingMessage": "Your application is being processed",
+    "pendingDescription": "We are verifying your payment. This process may take 24-48 business hours.",
+    "successMessage": "Application submitted successfully!",
+    "successDescription": "We will review your payment and notify you when your membership is active.",
+    "status": {
+      "active": "Active",
+      "pending": "Pending",
+      "expired": "Expired",
+      "none": "No membership"
+    },
+    "benefits": {
+      "title": "Member Benefits",
+      "description": "By becoming an AMR member you will enjoy:",
+      "tournaments": "Participation in official AMR tournaments",
+      "rankings": "Appearance in the official ranking",
+      "discounts": "Discounts on equipment and events",
+      "community": "Access to the player community"
+    },
+    "fee": {
+      "title": "Annual Fee",
+      "perYear": "year"
+    },
+    "payment": {
+      "title": "Payment Methods",
+      "description": "Choose your preferred payment method and make the transfer before submitting your application.",
+      "transfer": "Bank Transfer",
+      "bizumPhone": "Bizum Number",
+      "bankAccount": "Bank Account",
+      "beneficiary": "Beneficiary",
+      "amount": "Amount",
+      "bizumNote": "Important",
+      "bizumNoteDescription": "Include your username in the Bizum concept to identify the payment.",
+      "transferNote": "Important",
+      "transferNoteDescription": "Include your username in the transfer concept to identify the payment."
+    },
+    "application": {
+      "title": "Submit Application",
+      "description": "Once payment is made, enter the reference to complete your application.",
+      "paymentReference": "Payment Reference",
+      "paymentReferencePlaceholder": "E.g.: Bizum123456 or last 4 digits",
+      "paymentReferenceDescription": "Enter the Bizum confirmation code or the last digits of the transfer.",
+      "submit": "Submit Application",
+      "submitting": "Submitting..."
+    },
+    "errors": {
+      "paymentReferenceRequired": "Payment reference is required",
+      "paymentReferenceTooShort": "Reference must be at least 4 characters",
+      "genericError": "An error occurred. Please try again."
+    }
   }
 }

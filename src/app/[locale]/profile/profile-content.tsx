@@ -6,7 +6,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useLocale, useTranslations } from "next-intl";
-import { Loader2, User, Mail, Calendar, Shield, Eye, EyeOff } from "lucide-react";
+import Link from "next/link";
+import {
+  Loader2,
+  User,
+  Mail,
+  Calendar,
+  Shield,
+  Eye,
+  EyeOff,
+  CheckCircle2,
+  Clock,
+  XCircle,
+  AlertCircle,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,6 +39,15 @@ type UserProfile = {
   full_name: string;
   email: string | null;
   created_at: string;
+};
+
+type MembershipStatus = "pending" | "active" | "expired" | null;
+
+type Membership = {
+  id: string;
+  status: MembershipStatus;
+  applied_at: string;
+  expires_at: string | null;
 };
 
 const createEmailSchema = (t: ReturnType<typeof useTranslations<"profile">>) =>
@@ -55,6 +77,7 @@ export function ProfileContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [authEmail, setAuthEmail] = useState<string | null>(null);
+  const [membership, setMembership] = useState<Membership | null>(null);
 
   // Email form state
   const [isEmailSubmitting, setIsEmailSubmitting] = useState(false);
@@ -110,6 +133,19 @@ export function ProfileContent() {
         if (profileData.email) {
           emailForm.setValue("email", profileData.email);
         }
+      }
+
+      // Load membership status
+      const { data: membershipData } = await supabase
+        .from("memberships")
+        .select("id, status, applied_at, expires_at")
+        .eq("user_id", user.id)
+        .order("applied_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (membershipData) {
+        setMembership(membershipData);
       }
 
       setIsLoading(false);
@@ -218,6 +254,32 @@ export function ProfileContent() {
     });
   };
 
+  const getMembershipStatusIcon = (status: MembershipStatus) => {
+    switch (status) {
+      case "active":
+        return <CheckCircle2 className="h-5 w-5 text-green-500" />;
+      case "pending":
+        return <Clock className="h-5 w-5 text-yellow-500" />;
+      case "expired":
+        return <XCircle className="h-5 w-5 text-red-500" />;
+      default:
+        return <AlertCircle className="h-5 w-5 text-muted-foreground" />;
+    }
+  };
+
+  const getMembershipStatusText = (status: MembershipStatus) => {
+    switch (status) {
+      case "active":
+        return t("memberStatusActive");
+      case "pending":
+        return t("memberStatusPending");
+      case "expired":
+        return t("memberStatusExpired");
+      default:
+        return t("memberStatusNone");
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="flex min-h-[calc(100vh-8rem)] items-center justify-center">
@@ -256,10 +318,28 @@ export function ProfileContent() {
 
           {/* Membership Status */}
           <div className="flex items-start gap-3">
-            <Shield className="h-5 w-5 text-muted-foreground mt-0.5" />
-            <div>
+            {membership ? getMembershipStatusIcon(membership.status) : <Shield className="h-5 w-5 text-muted-foreground mt-0.5" />}
+            <div className="flex-1">
               <p className="text-sm font-medium text-muted-foreground">{t("membershipStatus")}</p>
-              <p className="text-base">{t("memberStatusActive")}</p>
+              <div className="flex items-center justify-between">
+                <p className="text-base">{getMembershipStatusText(membership?.status || null)}</p>
+                <Link
+                  href={`/${locale}/membership`}
+                  className="text-sm text-primary hover:underline"
+                >
+                  {membership ? t("viewMembership") : t("applyMembership")}
+                </Link>
+              </div>
+              {membership?.status === "active" && membership.expires_at && (
+                <p className="text-xs text-muted-foreground mt-1">
+                  {t("expiresOn")}: {formatDate(membership.expires_at)}
+                </p>
+              )}
+              {membership?.status === "pending" && (
+                <p className="text-xs text-yellow-600 dark:text-yellow-400 mt-1">
+                  {t("pendingVerification")}
+                </p>
+              )}
             </div>
           </div>
 

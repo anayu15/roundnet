@@ -120,6 +120,13 @@
     "noEmail": "Sin email configurado",
     "membershipStatus": "Estado de Membresía",
     "memberStatusActive": "Miembro Activo",
+    "memberStatusPending": "Pendiente de Verificación",
+    "memberStatusExpired": "Membresía Expirada",
+    "memberStatusNone": "Sin Membresía",
+    "viewMembership": "Ver membresía",
+    "applyMembership": "Solicitar membresía",
+    "expiresOn": "Expira el",
+    "pendingVerification": "Tu solicitud está siendo revisada",
     "registrationDate": "Miembro Desde",
     "updateEmail": "Actualizar Email",
     "updateEmailDescription": "Cambia tu dirección de email. Se enviará un email de verificación a tu nueva dirección.",
@@ -169,5 +176,65 @@
     "watchVideo": "Ver Vídeo",
     "loading": "Cargando contenido...",
     "error": "Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde."
+  },
+  "membership": {
+    "title": "Membresía AMR",
+    "description": "Hazte socio de la Asociación Madrileña de Roundnet y accede a beneficios exclusivos.",
+    "currentMembership": "Tu Membresía",
+    "currentMembershipDescription": "Información de tu membresía actual.",
+    "statusLabel": "Estado",
+    "paymentReference": "Referencia de Pago",
+    "appliedAt": "Fecha de Solicitud",
+    "approvedAt": "Fecha de Aprobación",
+    "expiresAt": "Fecha de Expiración",
+    "pendingMessage": "Tu solicitud está siendo procesada",
+    "pendingDescription": "Estamos verificando tu pago. Este proceso puede tardar entre 24-48 horas laborables.",
+    "successMessage": "¡Solicitud enviada correctamente!",
+    "successDescription": "Revisaremos tu pago y te notificaremos cuando tu membresía esté activa.",
+    "status": {
+      "active": "Activa",
+      "pending": "Pendiente",
+      "expired": "Expirada",
+      "none": "Sin membresía"
+    },
+    "benefits": {
+      "title": "Beneficios de ser socio",
+      "description": "Al hacerte socio de la AMR disfrutarás de:",
+      "tournaments": "Participación en torneos oficiales AMR",
+      "rankings": "Aparición en el ranking oficial",
+      "discounts": "Descuentos en equipamiento y eventos",
+      "community": "Acceso a la comunidad de jugadores"
+    },
+    "fee": {
+      "title": "Cuota Anual",
+      "perYear": "año"
+    },
+    "payment": {
+      "title": "Métodos de Pago",
+      "description": "Elige tu método de pago preferido y realiza la transferencia antes de enviar la solicitud.",
+      "transfer": "Transferencia",
+      "bizumPhone": "Número de Bizum",
+      "bankAccount": "Cuenta Bancaria",
+      "beneficiary": "Beneficiario",
+      "amount": "Importe",
+      "bizumNote": "Importante",
+      "bizumNoteDescription": "Incluye tu nombre de usuario en el concepto del Bizum para identificar el pago.",
+      "transferNote": "Importante",
+      "transferNoteDescription": "Incluye tu nombre de usuario en el concepto de la transferencia para identificar el pago."
+    },
+    "application": {
+      "title": "Enviar Solicitud",
+      "description": "Una vez realizado el pago, introduce la referencia para completar tu solicitud.",
+      "paymentReference": "Referencia de Pago",
+      "paymentReferencePlaceholder": "Ej: Bizum123456 o últimos 4 dígitos",
+      "paymentReferenceDescription": "Introduce el código de confirmación del Bizum o los últimos dígitos de la transferencia.",
+      "submit": "Enviar Solicitud",
+      "submitting": "Enviando..."
+    },
+    "errors": {
+      "paymentReferenceRequired": "La referencia de pago es obligatoria",
+      "paymentReferenceTooShort": "La referencia debe tener al menos 4 caracteres",
+      "genericError": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
+    }
   }
 }
